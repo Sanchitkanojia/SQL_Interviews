@@ -332,8 +332,8 @@ select department, sum(salary) total_sal from worker group by department order b
 -- salary.
 select first_name,salary from worker where salary=(select max(salary) from worker);
 
-## Bonus Question:
-	
+-- Bonus Question: Remove all the reversed number pairs for given table. 
+ 
 use temp;
 create table pairs(
 A int,
