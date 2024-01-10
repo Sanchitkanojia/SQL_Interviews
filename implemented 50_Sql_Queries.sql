@@ -319,18 +319,10 @@ w2.salary) order by w1.salary desc;
 
 -- Q-48. Write an SQL query to fetch nth
 -- max salaries from a table.
-select distinct salary from
-worker w1
-where n >= (select count(distinct salary) from worker w2 where w1.salary <=
-w2.salary) order by w1.salary desc;
-
-	OR
-
-select * from worker as w1
-where N-1=(
-           select count(distinct(w2.salary)) from worker as w2
-           where w2.salary>w1.salary
-);	
+select distinct salary from worker w1
+where n = (
+	   select count(distinct salary) from worker w2 
+	   where w1.salary < w2.salary) order by w1.salary desc;
 
 -- Q-49. Write an SQL query to fetch departments along with the total salaries paid for
 -- each of them.
