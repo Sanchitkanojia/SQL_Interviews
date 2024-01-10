@@ -324,6 +324,14 @@ worker w1
 where n >= (select count(distinct salary) from worker w2 where w1.salary <=
 w2.salary) order by w1.salary desc;
 
+	OR
+
+select * from worker as w1
+where N-1=(
+           select count(distinct(w2.salary)) from worker as w2
+           where w2.salary>w1.salary
+);	
+
 -- Q-49. Write an SQL query to fetch departments along with the total salaries paid for
 -- each of them.
 select department, sum(salary) total_sal from worker group by department order by total_sal desc; 	 
