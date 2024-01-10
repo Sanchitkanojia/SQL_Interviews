@@ -317,7 +317,7 @@ worker w1
 where 3 >= (select count(distinct salary) from worker w2 where w1.salary >=
 w2.salary) order by w1.salary desc;
 
--- Q-48. Write an SQL query to fetch nth
+-- Q-48. Write an SQL query to fetch n
 -- max salaries from a table.
 select distinct salary from
 worker w1
