@@ -328,7 +328,7 @@ w2.salary) order by w1.salary desc;
 -- each of them.
 select department, sum(salary) total_sal from worker group by department order by total_sal desc; 	 
 
--- Q-50. Write an SQL query to fetch the names of workers who earn the highest
+-- Q-50. Write an SQL query to fetch the name of worker who earn the highest
 -- salary.
 select first_name,salary from worker where salary=(select max(salary) from worker);
 
